@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Spider-Man Web Form</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #8B0000, #00008B);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background: black;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            margin: 40px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 15px red;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #111;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    🕷️ Spider-Man Web App 🕸️
+</header>
+
+<div class="container">
+    <h2>Kirim Pesan ke Spider-Man</h2>
+    
+    <input type="text" id="nama" placeholder="Masukkan nama kamu">
+    <textarea id="pesan" placeholder="Tulis pesan kamu..."></textarea>
+    
+    <br>
+    <button onclick="kirimPesan()">Kirim</button>
+
+    <div class="output" id="hasil"></div>
+</div>
+
+<script>
+    function kirimPesan() {
+        let nama = document.getElementById("nama").value;
+        let pesan = document.getElementById("pesan").value;
+
+        if(nama === "" || pesan === "") {
+            alert("Isi dulu semua kolom!");
+            return;
+        }
+
+        document.getElementById("hasil").innerHTML =
+            `<p><b>${nama}</b> berkata:</p>
+             <p>"${pesan}"</p>
+             <p>🕷️ Spider-Man akan segera datang!</p>`;
+    }
+</script>
+
+</body>
+</html>
